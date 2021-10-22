@@ -1,4 +1,4 @@
-# todo-list-js
+# todo-list
 
 ## Español
 
