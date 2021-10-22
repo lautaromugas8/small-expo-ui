@@ -9,7 +9,14 @@ const Task = ({ text, completed }) => {
   });
   return (
     <View style={styles.taskWrapper}>
-      <View style={styles.square}></View>
+      <View
+        style={[
+          styles.square,
+          {
+            backgroundColor: completed ? colors.red : colors.textDark,
+          },
+        ]}
+      ></View>
       <Text
         style={[
           styles.task,

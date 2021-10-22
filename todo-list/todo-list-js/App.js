@@ -26,7 +26,6 @@ export default function App() {
     } else {
       setAllTasks(allTasks.filter((task) => task.text !== found.text));
     }
-    console.log(allTasks);
   };
 
   const handleAddPress = () => {
@@ -37,7 +36,7 @@ export default function App() {
   };
 
   let [fontsLoaded] = useFonts({
-    "TT First Neue Bold": require("./assets/fonts/FontsFree-Net-TTFirsNeue1.ttf"),
+    "TT Firs Neue Bold": require("./assets/fonts/FontsFree-Net-TTFirsNeue1.ttf"),
     "iA Writer Quattro V": require("./assets/fonts/iAWriterQuattroV.ttf"),
   });
 
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 27,
   },
   headerTitle: {
-    fontFamily: "TT First Neue Bold",
+    fontFamily: "TT Firs Neue Bold",
     fontSize: 32,
   },
   tasksWrapper: {
