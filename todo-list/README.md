@@ -16,20 +16,26 @@ Then, press the task once to mark it as completed, pressing it again will delete
 
 ### Lista Vacia // Empty List
 
+<kbd>
 <img src="./screenshotImages/image0.png" width="250" >
+</kbd>
 
 ---
 
 ### Ejemplo de tarea // Task example
 
+<kbd>
 <img src="./screenshotImages/image1.png" width="250" >
-
+</kbd>
+  
 ---
 
 ### Tarea completada // Completed Task
 
+<kbd>
 <img src="./screenshotImages/image2.png" width="250" >
-
+</kbd>
+  
 ## Fonts
 
 - TT Firs Neue Bold.
