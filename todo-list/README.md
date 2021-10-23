@@ -17,7 +17,7 @@ Then, press the task once to mark it as completed, pressing it again will delete
 ### Lista Vacia // Empty List
 
 <kbd>
-<img src="./screenshotImages/image0.png" width="250" >
+<img src="./screenshots/image0.png" width="250" >
 </kbd>
 
 ---
@@ -25,7 +25,7 @@ Then, press the task once to mark it as completed, pressing it again will delete
 ### Ejemplo de tarea // Task example
 
 <kbd>
-<img src="./screenshotImages/image1.png" width="250" >
+<img src="./screenshots/image1.png" width="250" >
 </kbd>
   
 ---
@@ -33,7 +33,7 @@ Then, press the task once to mark it as completed, pressing it again will delete
 ### Tarea completada // Completed Task
 
 <kbd>
-<img src="./screenshotImages/image2.png" width="250" >
+<img src="./screenshots/image2.png" width="250" >
 </kbd>
   
 ## Fonts
