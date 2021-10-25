@@ -17,14 +17,18 @@ import Entypo from "react-native-vector-icons/Entypo";
 import { useFonts } from "expo-font";
 import discoverCategoriesData from "../assets/data/discoverCategoriesData";
 import discoverData from "../assets/data/discoverData";
+import activitiesData from "../assets/data/activitiesData";
+import learnMoreData from "../assets/data/learnMoreData";
 
 Feather.loadFont();
 Entypo.loadFont();
 
 const Home = ({ navigation }) => {
-  useFonts({
+  let [loadedFonts] = useFonts({
     "Lato-Bold": require("../assets/fonts/Lato-Bold.ttf"),
   });
+
+  if (!loadedFonts) return <View></View>;
 
   const renderCategoriesTitle = ({ item }) => {
     return (
@@ -64,6 +68,29 @@ const Home = ({ navigation }) => {
             </View>
           </ImageBackground>
         </Pressable>
+      </View>
+    );
+  };
+
+  const renderActivities = ({ item }) => {
+    return (
+      <View style={styles.activitiesItem}>
+        <Image source={item.image} />
+        <Text style={styles.activitiesItemTitle}>{item.title}</Text>
+      </View>
+    );
+  };
+
+  const renderLearnMore = ({ item }) => {
+    return (
+      <View style={styles.learnMoreCard}>
+        <ImageBackground
+          source={item.image}
+          style={styles.learnMoreImage}
+          borderRadius={20}
+        >
+          <Text style={styles.learnMoreCardTitle}>{item.title}</Text>
+        </ImageBackground>
       </View>
     );
   };
@@ -111,6 +138,36 @@ const Home = ({ navigation }) => {
         </View>
 
         {/* Activities */}
+        <View style={styles.activitiesWrapper}>
+          <Text style={styles.activitiesTitle}>Activities</Text>
+        </View>
+
+        {/* Activities Icons */}
+        <View>
+          <FlatList
+            data={activitiesData}
+            renderItem={renderActivities}
+            keyExtractor={(item) => item.id}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          />
+        </View>
+
+        {/* Learn More */}
+        <View style={styles.learnMoreWrapper}>
+          <Text style={styles.learnMoreTitle}>Learn More</Text>
+        </View>
+
+        {/* Learn More Cards */}
+        <View>
+          <FlatList
+            data={learnMoreData}
+            renderItem={renderLearnMore}
+            keyExtractor={(item) => item.id}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          />
+        </View>
       </ScrollView>
     </View>
   );
@@ -176,6 +233,53 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.white,
     marginLeft: 9,
+  },
+  activitiesWrapper: {
+    marginTop: 30,
+    paddingHorizontal: 20,
+  },
+  activitiesTitle: {
+    fontFamily: "Lato-Bold",
+    fontSize: 24,
+    color: colors.black,
+  },
+  activitiesItem: {
+    marginTop: 20,
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingLeft: 20,
+  },
+  activitiesItemTitle: {
+    marginTop: 10,
+    fontFamily: "Lato-Bold",
+    fontSize: 10,
+    color: colors.gray,
+  },
+  learnMoreWrapper: {
+    marginTop: 30,
+    paddingHorizontal: 20,
+  },
+  learnMoreTitle: {
+    fontFamily: "Lato-Bold",
+    fontSize: 24,
+    color: colors.black,
+  },
+  learnMoreCard: {
+    marginTop: 30,
+    paddingLeft: 15,
+    marginBottom: 55,
+  },
+  learnMoreImage: {
+    width: 170,
+    height: 180,
+    paddingHorizontal: 10,
+    paddingVertical: 20,
+    justifyContent: "flex-end",
+  },
+  learnMoreCardTitle: {
+    color: colors.white,
+    fontFamily: "Lato-Bold",
+    fontSize: 18,
   },
 });
 
